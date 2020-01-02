@@ -8,7 +8,7 @@
 1. Download the video dataset 
 2. Generate features using the resnet model
 ``` 
-nohup python2 -u generate_dataset_mod.py --model_name resnet --data path_to_videos --out file_output.h5 > file_log.log & tail -f file_log.log
+nohup python2 -u utils/generate_dataset_mod.py --model_name resnet --data path_to_videos --out file_output.h5 > file_log.log & tail -f file_log.log
 ```
 As an output we get a file which contains the visual features for each video.
 
