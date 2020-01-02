@@ -184,8 +184,10 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_name", type=str, required=True, help="model to use")
+    parser.add_argument("--data", type=str, required=True, help="the path of the folder video data")
+    parser.add_argument("--out", type=str, required=True, help="the output file .h5")
     args = parser.parse_args()
-    gen = Generate_Dataset(args.model_name,'min_data1/min_Data', 'cognimuse_dataset.h5')
+    gen = Generate_Dataset(args.model_name,args.data, args.out)
 
     gen.generate_dataset()
     gen.h5_file.close()
