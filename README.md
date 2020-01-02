@@ -1,7 +1,8 @@
 # video summarization
 ## Environment
 - python2
-- pytorch 3.1.0
+- torch 1.2.0
+- torchvison 0.2.0
 
 ## Get started
 1. Download the video dataset 
