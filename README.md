@@ -7,6 +7,7 @@
 ## Get started
 1. Download the video dataset 
 2. Generate features using the resnet model
+
 first create a folder frame where to put the frames of each video
 
 ``` 
