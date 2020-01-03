@@ -7,6 +7,8 @@
 ## Get started
 1. Download the video dataset 
 2. Generate features using the resnet model
+first create a folder frame where to put the frames of each video
+
 ``` 
 nohup python2 -u utils/generate_dataset_mod.py --model_name resnet --data path_to_videos --out file_output.h5 > file_log.log & tail -f file_log.log
 ```
