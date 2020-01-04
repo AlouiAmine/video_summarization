@@ -1,4 +1,8 @@
 # video summarization
+This git repository is based on two repositories:
+- https://github.com/SinDongHwan/pytorch-vsumm-reinforce/blob/master/utils/generate_dataset.py
+- https://github.com/KaiyangZhou/pytorch-vsumm-reinforce
+
 ## Environment
 - python2
 - torch 1.2.0
