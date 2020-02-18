@@ -9,7 +9,10 @@ This git repository is based on two repositories:
 - torchvison 0.2.0
 
 ## Get started
-1. Download the video dataset 
+1. Download the video dataset (cognimuse) 
+```
+wget http://cvsp.cs.ntua.gr/research/COGNIMUSEdatabase/Data.rar
+```
 2. Generate features using the resnet model
 
 first create a folder frame where to put the frames of each video
@@ -58,5 +61,14 @@ python summary2video.py -p path_to/result.h5 -d path_to/video_frames -i 0 --fps 
    journal={arXiv:1801.00054}, 
    year={2017} 
 }
+@inproceedings{inproceedings,
+author = {Koutras, Petros and Zlatintsi, Nancy and E.Iosif, and Katsamanis, Athanasios and Maragos, Petros and Potamianos, Alexandros},
+year = {2015},
+month = {10},
+pages = {},
+title = {Predicting Audio-Visual Salient Events Based on Visual, Audio and Text Modalities for Movie Summarization},
+doi = {10.1109/ICIP.2015.7351630}
+}
+
 ```
 
