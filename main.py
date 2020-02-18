@@ -21,15 +21,18 @@ from rewards import compute_reward
 import vsum_tools
 import scipy.io
 import os
+
+
+
 folder='/home/aloui/Desktop/eurecom/fsemesterproject/COGNIMUSEdatabase_v0.1/test_video'
 dat=[]
 
-for filename in os.listdir(folder):
-    
+for filename in sorted(os.listdir(folder)):
+    print(filename)
     d=scipy.io.loadmat(os.path.join(folder, filename))
     dat.append(d['visualIF'])
 parser = argparse.ArgumentParser("Pytorch code for unsupervised video summarization with REINFORCE")
-# Dataset options
+# Dataset options[]
 parser.add_argument('-d', '--dataset', type=str, required=True, help="path to h5 dataset (required)")
 parser.add_argument('-s', '--split', type=str, required=True, help="path to split file (required)")
 parser.add_argument('--split-id', type=int, default=0, help="split index (default: 0)")
@@ -177,6 +180,8 @@ def evaluate(model, dataset, test_keys, use_gpu):
             h5_res = h5py.File(osp.join(args.save_dir, 'result.h5'), 'w')
 
         for key_idx, key in enumerate(test_keys):
+            print(test_keys)
+            print(key)
             seq = dataset[key]['features'][...]
             seq = torch.from_numpy(seq).unsqueeze(0)
             if use_gpu: seq = seq.cuda()
@@ -187,7 +192,7 @@ def evaluate(model, dataset, test_keys, use_gpu):
             num_frames = dataset[key]['n_frames'][()]
             nfps = dataset[key]['n_frame_per_seg'][...].tolist()
             positions = dataset[key]['picks'][...]
-            user_summary = dat[key_idx]
+            user_summary = dat[int(key[-1])]
 
             machine_summary = vsum_tools.generate_summary(probs, cps, num_frames, nfps, positions)
             print()
