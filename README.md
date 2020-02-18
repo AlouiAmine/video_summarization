@@ -50,7 +50,7 @@ python summary2video.py -p path_to/result.h5 -d path_to/video_frames -i 0 --fps 
 ```
 
 
-## Citation
+## References
 ```
 @article{zhou2017reinforcevsumm, 
    title={Deep Reinforcement Learning for Unsupervised Video Summarization with Diversity-Representativeness Reward},
